@@ -2,7 +2,7 @@ package com.example.wallbackend.controller;
 
 import com.example.wallbackend.dto.PostDto;
 import com.example.wallbackend.model.Post;
-import com.example.wallbackend.repository.PostRepositroy;
+import com.example.wallbackend.repository.PostRepository;
 import com.example.wallbackend.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +22,7 @@ public class PostController {
     private PostService postService;
 
     @Autowired
-    private PostRepositroy postRepositroy;
+    private PostRepository postRepositroy;
 
 
     @PostMapping(value = "/add")

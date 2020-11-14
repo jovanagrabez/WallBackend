@@ -4,14 +4,14 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Set;
 
-@Entity
 @Data
-public class Post {
+@Entity
+public class Comment {
 
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
 
 
@@ -23,12 +23,5 @@ public class Post {
 
     @ManyToOne
     private User author;
-
-    @Column
-    private double rate;
-
-    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE},fetch=FetchType.LAZY, orphanRemoval = true)
-    private Set<Comment> comments;
-
 
 }

@@ -3,7 +3,7 @@ package com.example.wallbackend.service.impl;
 import com.example.wallbackend.dto.PostDto;
 import com.example.wallbackend.model.Post;
 import com.example.wallbackend.model.User;
-import com.example.wallbackend.repository.PostRepositroy;
+import com.example.wallbackend.repository.PostRepository;
 import com.example.wallbackend.repository.UserRepository;
 import com.example.wallbackend.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class PostServiceImpl implements PostService {
     private UserRepository userRepository;
 
     @Autowired
-    private PostRepositroy postRepostiroy;
+    private PostRepository postRepostiroy;
     @Override
     public void add(PostDto post) {
 
