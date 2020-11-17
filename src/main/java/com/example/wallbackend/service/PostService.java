@@ -2,7 +2,7 @@ package com.example.wallbackend.service;
 
 import com.example.wallbackend.dto.PostDto;
 import com.example.wallbackend.model.Post;
-import com.example.wallbackend.repository.PostRepositroy;
+import com.example.wallbackend.repository.PostRepository;
 import com.example.wallbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -58,19 +58,9 @@ public class PostController {
 
     @PutMapping(value = "/edit")
     public ResponseEntity editPost(@RequestBody Post post) {
-        LocalDateTime myDateObj = LocalDateTime.now();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formattedDate = myDateObj.format(myFormatObj);
-        long difference_In_Time = Timestamp.valueOf(formattedDate).getTime() - post.getDateAndTime().getTime();
-        long difference_In_Minutes = (difference_In_Time / (1000 * 60)) % 60;
-        long difference_In_Days =(difference_In_Time / (1000 * 60 * 60 * 24)) % 365;
-        if (difference_In_Days> 1 || difference_In_Minutes>5) {
-            System.out.println(difference_In_Minutes + "LALALALA");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        } else{
-            this.postService.edit(post);
+
+           this.postService.edit(post);
             return ResponseEntity.ok().build();
-        }
     }
 
 

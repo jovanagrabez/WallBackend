@@ -64,17 +64,10 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public void delete(CommentDto comment) {
 
-        System.out.println("lalalalala" + comment.getText());
-        System.out.println("bbbbbbbbbbbb" + comment.getPostId());
-        System.out.println("ccccccccc" + comment.getId());
-
-
-
         Post p = this.postRepository.getOne(comment.getPostId());
         Comment comm = this.commentRepository.getOne(comment.getId());
         for(Comment c : p.getComments()){
             if(c.getId().equals(comm.getId())){
-                System.out.println("lalalalala" + c.getText());
                 p.getComments().remove(c);
                 this.postRepository.save(p);
                 this.commentRepository.delete(comm);
