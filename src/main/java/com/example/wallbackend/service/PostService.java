@@ -1,6 +1,7 @@
 package com.example.wallbackend.service;
 
 import com.example.wallbackend.dto.PostDto;
+import com.example.wallbackend.dto.RatingDTO;
 import com.example.wallbackend.model.Post;
 import com.example.wallbackend.repository.PostRepository;
 import com.example.wallbackend.repository.UserRepository;
@@ -18,4 +19,5 @@ public interface PostService {
     void edit(Post post);
     List<Post> findAll();
     List<Post> getAllByUser(String username);
+    void ratePost(RatingDTO ratingDTO, Long id);
 }

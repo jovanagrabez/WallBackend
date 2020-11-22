@@ -24,11 +24,20 @@ public class Post {
     @ManyToOne
     private User author;
 
-    @Column
-    private double rate;
-
     @OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE},fetch=FetchType.LAZY, orphanRemoval = true)
     private Set<Comment> comments;
+
+
+    @Column
+    private double average;
+
+    @Column
+    private double numberR;
+
+
+//    @OneToMany(mappedBy="post", fetch = FetchType.LAZY)
+//    private Set<Rating> ratings;
+
 
 
 }
